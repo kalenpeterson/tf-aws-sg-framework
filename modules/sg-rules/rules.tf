@@ -13,12 +13,13 @@ variable "zones" {
   type        = map(list(string))
 
   default = {
-    web-internal = ["10.1.0.0/16",   "Internal Web Zone"]
-    app-internal = ["10.2.0.0/16",   "Internal App Zone"]
-    db-internal  = ["10.3.0.0/16",   "Internal DB Zone"]
-    lb-internal  = ["10.4.0.0/16",   "Internal Loadbalancer Zone"]
-    lb-external  = ["10.100.0.0/16", "External Loadbalancer Zone"]
-    all          = ["0.0.0.0/0",     "Any Zone"]
+    web-internal = ["10.1.0.0/16",    "Internal Web Zone"]
+    app-internal = ["10.2.0.0/16",    "Internal App Zone"]
+    db-internal  = ["10.3.0.0/16",    "Internal DB Zone"]
+    lb-internal  = ["10.4.0.0/16",    "Internal Loadbalancer Zone"]
+    lb-external  = ["10.100.0.0/16",  "External Loadbalancer Zone"]
+    all          = ["0.0.0.0/0",      "Any Zone"]
+    on-prem      = ["192.168.0.0/16", "On Prem Zone"]
 
     # This is a fallback zone to pass to lookup() as default. It does not open anything, because it should never be used.
     _ = ["", ""]
